@@ -40,10 +40,17 @@ Product.init(
       references: {
         model: 'category',
         key: 'id',
-      },
-      // add user_id
+      }
     },
-  },
+      user_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        references:{
+          model:'user',
+          key:'id',
+        }
+      },
+    },
   {
     sequelize,
     timestamps: false,
