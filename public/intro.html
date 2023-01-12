@@ -1,25 +1,186 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Knick-Knacks</title>
-  <link rel="stylesheet" href="./intro.css">
-  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-</head>
+<!doctype html>
+<html class="utf-8" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knick-Knack</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./intro.css">
+    <link rel="stylesheet" href="./intro.scss">
+    
+  </head>
+  <body>
 
-<body>
-    <h1 class="explore">Knick Knacks</h1>
-    <a onclick="window.open('./index.html');" id="buttton1" 
-     class="enter" href="./index.html">Enter</a>
+    <!-- <div class="logo">
+      <img src="./images/logo.png" width="325px" height="250px"></img>
+    </div> -->
 
-<div class="lines">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-</div>
+    <div class="top-bar-center">
+      <ul class="menu"></ul>
+        <img src="./images/logo.png" class="logo" width="400px" height="250px"></img>
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#sell">Sell</a></li>
+          <li><a href="./login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="button" class="button">Search</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="fullscreen-image-slider">
+      <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
+        <ul class="orbit-container">
+          <button class="orbit-previous">
+            <span class="show-for-sr">Previous Slide</span>
+            <span class="nav fa fa-chevron-left fa-3x"></span>
+          </button>
+          <button class="orbit-next">
+            <span class="show-for-sr">Next Slide</span>
+            <span class="nav fa fa-chevron-right fa-3x"></span>
+          </button>
+          <li class="is-active orbit-slide">
+            <img class="orbit-image" src="./images/sliderIMG.png" alt="">
+            <figcaption class="orbit-caption">
+              <h1>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit.</h1>
+              <button class= "btn">Login/Sign-up</button>
+            </figcaption>
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="./images/sliderIMG.png" alt="">
+            <figcaption class="orbit-caption">
+              <h1>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit.</h1>
+              <button class= "btn">Login/Sign-up</button>
+            </figcaption>
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="./images/sliderIMG.png" alt="">
+            <figcaption class="orbit-caption">
+              <h1>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit.</h1>
+              <button class= "btn">Login/Sign-up</button>
+            </figcaption>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+
+
+    <hr>
+
+    <div class="row column text-center">
+      <h2 class="featured">Featured Today!</h2>
+      <hr>
+    </div>
+
+    <div class="row small-up-2 medium-up-3 large-up-6">
+      <div class="column">
+        <img class="thumbnail" src="https://i.pinimg.com/736x/b5/b3/39/b5b339ffed05df695a2016776a070d9f.jpg">
+        <h5>Nightfall Painting 
+          -John Doe</h5>
+        <p>$100</p>
+        <a href="#" class="button small expanded hollow">Buy</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="https://www.familyhandyman.com/wp-content/uploads/2018/02/P1022169_2.jpg?fit=696,696">
+        <h5>Hexagon Wooden Shelves</h5>
+        <p>$80</p>
+        <a href="#" class="button small expanded hollow">Buy</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="https://i.pinimg.com/originals/d2/39/58/d2395800a32cef11125b7a764aa67762.jpg?fit=696,696">
+        <h5>Custom Watch Box</h5>
+        <p>$60</p>
+        <a href="#" class="button small expanded hollow">Buy</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="https://www.personalizationmall.com/cat_image/600/18335-41651-170209145115.jpg">
+        <h5>Hand-Made Cutting Board</h5>
+        <p>$75</p>
+        <a href="#" class="button small expanded hollow">Buy</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="https://i.pinimg.com/736x/ca/01/f9/ca01f9fd17d01d826531cf71cb6a6eca.jpg">
+        <h5>Wooden Utencil Holder</h5>
+        <p>$30</p>
+        <a href="#" class="button small expanded hollow">Buy</a>
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="https://i.pinimg.com/736x/ca/34/c9/ca34c9dfef6f26fcddd1ec9c41dffe2e.jpg">
+        <h5>"Home" Custom Pillow</h5>
+        <p>$15</p>
+        <a href="#" class="button small expanded hollow">Buy</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- <div class="simple-subscription-form">
+      <form>
+        <h4>Subscribe</h4>
+        <p>Receive updates and newsletters. Simply enter your email below :</p>
+        <div class="input-group">
+          <span class="input-group-label">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <input class="input-group-field" type="email" placeholder="Email" required>
+          <button class="button">Sign up now</button>
+      </form>
+    </div>
+    
+     -->
+
+
+     <footer class="social-footer">
+      <div class="social-footer-left">
+        <li class="footerLogo">Knick Knack</li>
+      </div>
+      <div class="social-footer-icons">
+        <ul class="menu simple">
+          <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    
+    
+    
+
+    
+    <!-- <div class="bottom-bar-center">
+      <ul class="menu"></ul>
+        <img src="./images/logo.png" class="logo" width="170px" height="115px"></img>
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Shipping &amp; Delivery</a></li>
+        </ul>
+      </div>
+    </div> -->
+
   
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="enter.js"></script>
-</body>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
 </html>
