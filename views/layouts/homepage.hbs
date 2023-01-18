@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./intro.css">
     <link rel="stylesheet" href="./intro.scss">
-    
   </head>
+
   <body>
-
-    <!-- <div class="logo">
-      <img src="./images/logo.png" width="325px" height="250px"></img>
-    </div> -->
-
+      <header>
     <div class="top-bar-center">
       <ul class="menu"></ul>
       <a href="./intro.html"><img src="./images/logo.png" class="logo" width="400px" height="250px"></img></a>
@@ -23,7 +19,11 @@
         <ul class="menu">
           <li><a href="./shop.html">Shop</a></li>
           <li><a href="#sell">Sell</a></li>
-          <li><a href="./login.html">Login</a></li>
+           {{#if loggedIn}}
+              <li><a href="./account.html"><button class= "btn">My Account</button></a></li>
+              {{else}}
+              <li><a href="./login.html"><button class= "btn">Login</button></a></li>
+              {{/if}}
         </ul>
       </div>
       <div class="top-bar-right">
@@ -33,6 +33,7 @@
         </ul>
       </div>
     </div>
+</header>
 
     <hr>
 
@@ -52,7 +53,11 @@
             <figcaption class="orbit-caption">
               <h1>Browse handmade or custom Knick Knacks<br>from all around the world.</h1>
               <br>
+              {{#if loggedIn}}
+              <a href="./shop.html"><button class= "btn">Shop!</button></a>
+              {{else}}
               <a href="./login.html"><button class= "btn">Login/Sign-up</button></a>
+              {{/if}}
             </figcaption>
           </li>
           <li class="orbit-slide">
@@ -60,7 +65,11 @@
             <figcaption class="orbit-caption">
               <h1>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit.</h1>
               <br>
+               {{#if loggedIn}}
+              <a href="./shop.html"><button class= "btn">Shop!</button></a>
+              {{else}}
               <a href="./login.html"><button class= "btn">Login/Sign-up</button></a>
+              {{/if}}
             </figcaption>
           </li>
           <li class="orbit-slide">
@@ -68,81 +77,22 @@
             <figcaption class="orbit-caption">
               <h1>Lorem ipsum dolor sit amet, <br>consectetur adipisicing elit.</h1>
               <br>
+               {{#if loggedIn}}
+              <a href="./shop.html"><button class= "btn">Shop!</button></a>
+              {{else}}
               <a href="./login.html"><button class= "btn">Login/Sign-up</button></a>
+              {{/if}}
             </figcaption>
           </li>
         </ul>
       </div>
     </div>
     
-    
-    
-
-
     <hr>
 
-    <div class="row column text-center">
-      <h2 class="featured">Featured Today!</h2>
-      <hr>
-    </div>
-
-    <div class="row small-up-2 medium-up-3 large-up-6">
-      <div class="column">
-        <img class="thumbnail" src="https://i.pinimg.com/736x/b5/b3/39/b5b339ffed05df695a2016776a070d9f.jpg">
-        <h5>Nightfall Painting 
-          -John Doe</h5>
-        <p>$100</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://www.familyhandyman.com/wp-content/uploads/2018/02/P1022169_2.jpg?fit=696,696">
-        <h5>Hexagon Wooden Shelves</h5>
-        <p>$80</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://i.pinimg.com/originals/d2/39/58/d2395800a32cef11125b7a764aa67762.jpg?fit=696,696">
-        <h5>Custom Watch Box</h5>
-        <p>$60</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://www.personalizationmall.com/cat_image/600/18335-41651-170209145115.jpg">
-        <h5>Hand-Made Cutting Board</h5>
-        <p>$75</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://i.pinimg.com/736x/ca/01/f9/ca01f9fd17d01d826531cf71cb6a6eca.jpg">
-        <h5>Wooden Utencil Holder</h5>
-        <p>$30</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://i.pinimg.com/736x/ca/34/c9/ca34c9dfef6f26fcddd1ec9c41dffe2e.jpg">
-        <h5>"Home" Custom Pillow</h5>
-        <p>$15</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-    </div>
+    {{ body }}
 
     <hr>
-
-    <!-- <div class="simple-subscription-form">
-      <form>
-        <h4>Subscribe</h4>
-        <p>Receive updates and newsletters. Simply enter your email below :</p>
-        <div class="input-group">
-          <span class="input-group-label">
-            <i class="fa fa-envelope"></i>
-          </span>
-          <input class="input-group-field" type="email" placeholder="Email" required>
-          <button class="button">Sign up now</button>
-      </form>
-    </div>
-    
-     -->
-
 
      <footer class="social-footer">
       <div class="social-footer-left">
@@ -158,32 +108,9 @@
       </div>
     </footer>
     
-    
-    
-    
-
-    
-    <!-- <div class="bottom-bar-center">
-      <ul class="menu"></ul>
-        <img src="./images/logo.png" class="logo" width="170px" height="115px"></img>
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Return Policy</a></li>
-          <li><a href="#">Shipping &amp; Delivery</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  
-    
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="./scripts.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
   </body>
 </html>
