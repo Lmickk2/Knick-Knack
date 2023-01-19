@@ -39,6 +39,7 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: true
     },
+    // dropdown with preset cats
     category_id:{
       type: DataTypes.INTEGER,
       references: {
