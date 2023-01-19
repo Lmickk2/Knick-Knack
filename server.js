@@ -2,15 +2,13 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
+const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 
-
-const sequelize = require('./config/connection');
-
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const app = express();
+
 
 // This is your test secret API key.
 const stripe = require('stripe')('sk_test_51MRjHIE03WUhRZEoxcZgQO4EgSLwVxmZmaxb9A9vUpr02L9vrKYFyFbgMlMJayc3Yg4GIIBuGg3ZtYPt467W8ahL00v4BLd3EG');
@@ -57,8 +55,17 @@ app.post('/create-checkout-session', async (req, res) => {
     res.redirect(303, session.url);
   });
 app.use(routes);
+// Set up sessions with cookies
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    // Stored in milliseconds
+    maxAge: 24 * 60 * 60 * 1000, // expires after 1 day
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 
-sequelize.sync({ force: false }).then(() =>
-{
-    app.listen(PORT, () => console.log('Now listening'));
-});
+

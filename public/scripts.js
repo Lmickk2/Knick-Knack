@@ -1,7 +1,6 @@
-
-var $frame = $('#frame');
+// var $frame = $('#frame');
 	   
-	setInterval( function() {
-		  var slides = $('.slide');
-		  slides.first().appendTo($frame);
-}, 3000);
+// 	setInterval( function() {
+// 		  var slides = $('.slide');
+// 		  slides.first().appendTo($frame);
+// }, 3000);
