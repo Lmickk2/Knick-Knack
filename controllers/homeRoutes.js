@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Category, Product, User } = require('../models');
 const withAuth = require('../utils/auth');
+const Sequelize = require('sequelize');
 
 router.get('/', async (req, res) =>
 {
@@ -30,7 +31,7 @@ router.get('/', async (req, res) =>
 router.get('/project/:id', async (req, res) =>
 {
     try {
-        const projectData = await Project.findByPk(req.params.id, {
+        const productData = await Product.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -39,16 +40,31 @@ router.get('/project/:id', async (req, res) =>
             ],
         });
 
-        const project = projectData.get({ plain: true });
+        const  product= productData.get({ plain: true });
 
-        res.render('featured', {
-            ...project,
+        res.render('product', {
+            ...product,
             logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+router.get('/featured', async (req,res)=>
+{
+    try{
+        const products = await Product.findAll({ order: Sequelize.literal('rand()'), limit: 5 })
+        const productsList = products.map(p => p.get({plain:true}))
+        res.render('featured', {
+            items: productsList
+        })
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+    
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) =>
@@ -82,8 +98,26 @@ router.get('/login', (req, res) =>
     res.render('login');
 });
 
+router.get('/shop', (req, res) =>
+{
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/shop');
+        return;
+    }
 
+    res.render('shop');
+});
 
+router.get('/homepage', (req, res) =>
+{
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/homepage');
+        return;
+    }
 
+    res.render('homepage');
+});
 
 module.exports = router;
