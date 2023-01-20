@@ -30,7 +30,7 @@ router.get('/project/:id', async (req, res) =>
             ],
         });
 
-        const  product= productData.get({ plain: true });
+        const product= productData.get({ plain: true });
 
         res.render('product', {
             ...product,
@@ -88,6 +88,27 @@ router.get('/shop', (req, res) =>
 
     res.render('shop');
 });
+
+router.get('/checkout', (req, res) =>
+{
+    if (req.session.logged_in) {
+        res.redirect('/checkout');
+        return;
+    }
+
+    res.render('checkout');
+});
+
+router.get('/product', (req, res) =>
+{
+    if (req.session.logged_in) {
+        res.redirect('/product');
+        return;
+    }
+
+    res.render('product');
+});
+
 
 
 module.exports = router;

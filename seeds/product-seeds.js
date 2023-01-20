@@ -163,7 +163,7 @@ const productData = [
     user_id: 2
   },
   {
-    product_name: 'German Hunter\'s Hat',
+    product_name: 'German Hunters Hat',
     price: 69.99,
     stock: 2,
     category_id: 1,
