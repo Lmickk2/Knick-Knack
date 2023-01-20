@@ -6,20 +6,23 @@
     <title>Knick-Knack</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./intro.css">
-    <link rel="stylesheet" href="./intro.scss">
+    <link rel="stylesheet" href="/intro.css">
     
   </head>
   <body>
 
     <div class="top-bar-center">
       <ul class="menu"></ul>
-      <a href="homepage"><img src="./images/logo.png" class="logo" width="400px" height="250px"></img></a>
+      <a href="/"><img src="./images/logo.png" class="logo" width="400px" height="250px"></img></a>
       <div class="top-bar-left">
         <ul class="menu">
-          <li><a href="shop">Shop</a></li>
-          <li><a href="#sell">Sell</a></li>
-          <li><a href="login">Login</a></li>
+          <li><a href="/shop">Shop</a></li>
+          {{#if loggedIn}}
+          <li><a href="/account">My Account</a></li>
+          <li><button id="logout">logout</button></li>
+          {{else }}
+          <li><a href="/login">Login</a></li>
+          {{/if}}
         </ul>
       </div>
       <div class="top-bar-right">
@@ -33,6 +36,9 @@
     <hr>
 
   <main class="container container-fluid mt-5">
+      {{#if loggedIn}}
+  <script src="./logout.js"></script>
+  {{/if}}
       {{{ body }}}
     </main>
 
