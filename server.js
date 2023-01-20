@@ -38,13 +38,15 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.get("/checkout", (req,res) => {
+  res.render("checkout")
+})
 app.post('/create-checkout-session', async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
           // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-          price: '{{PRICE_ID}}',
+          price: 'price_1MS9pqE03WUhRZEohYyZTb7W',
           quantity: 1,
         },
       ],
