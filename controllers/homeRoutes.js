@@ -18,7 +18,7 @@ router.get('/', async (req, res) =>
     }
 });
 
-router.get('/project/:id', async (req, res) =>
+router.get('/product/:id', async (req, res) =>
 {
     try {
         const productData = await Product.findByPk(req.params.id, {
@@ -78,21 +78,30 @@ router.get('/logout', (req, res) =>
     res.render('logout');
 });
 
-router.get('/shop', (req, res) =>
+router.get('/shop', async (req, res) =>
 {
     // If the user is already logged in, redirect the request to another route
     if (!req.session.logged_in) {
         res.redirect('/login');
         return;
     }
-
-    res.render('shop');
+    try {
+        const products = await Product.findAll()
+        const productsList = products.map(p => p.get({plain:true}))
+        res.render('shop', {
+            items: productsList,
+            loggedIn: req.session.logged_in,
+        })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 router.get('/checkout', (req, res) =>
 {
-    if (req.session.logged_in) {
-        res.redirect('/checkout');
+    if (!req.session.logged_in) {
+        res.redirect('/login');
         return;
     }
 
