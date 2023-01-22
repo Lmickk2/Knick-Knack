@@ -1,0 +1,17 @@
+
+<div class="row column text-center">
+      <h2 class="featured">Your Account</h2>
+      <hr>
+    </div>
+
+
+<h1>Welcome, {{user.name}} <span id="name"></span>!</h1>
+  <p>{{user.id}} <span id="profile-id"></span></p>
+  <form>
+    <label for="profile-image">Upload Profile Image:</label>
+    <input type="file" id="profile-image" name="profile-image">
+    <br>
+    <button type="submit">Upload</button>
+  </form>
+  {{/each}}
+  </div>

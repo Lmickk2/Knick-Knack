@@ -1,30 +1,21 @@
-
-<div class="fullscreen-image-slider">
-      <div class="orbit" role="region" aria-label="FullScreen Pictures" data-orbit>
-        <ul class="orbit-container">
-          <button class="orbit-previous">
-            <span class="show-for-sr">Previous Slide</span>
-            <span class="nav fa fa-chevron-left fa-3x"></span>
-          </button>
-          <button class="orbit-next">
-            <span class="show-for-sr">Next Slide</span>
-            <span class="nav fa fa-chevron-right fa-3x"></span>
-          </button>
-          <li class="is-active orbit-slide">
-            <img class="orbit-image" src="./images/sliderIMG.png" alt="">
-            <figcaption class="orbit-caption">
-              <h1>Browse handmade or custom Knick Knacks<br>from all around the world.</h1>
-              <br>
-              {{#if loggedIn}}
+<div class = "img-slider">
+<div class="tech-slideshow">
+  <div class="mover-1"></div>
+</div>
+<h1 class="slide-title">From Clothing to Tech, Browse Items from All Around the World!</h1>
+{{#if loggedIn}}
               <a href="/shop"><button class= "btn">Shop!</button></a>
               {{else}}
               <a href="/login"><button class= "btn">Login/Sign-up</button></a>
               {{/if}}
-            </figcaption>
-          </li>
-        </ul>
-      </div>
+</div>
+  <br>
       {{> featured}}
     </div>
 
+<br>
+
+<a href="shop"><p class="view-more">View More</p></a>
+
+<br>
     

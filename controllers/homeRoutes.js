@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 router.get('/', async (req, res) =>
 {
     try {
-        const products = await Product.findAll({ order: Sequelize.literal('rand()'), limit: 5 })
+        const products = await Product.findAll({ order: Sequelize.literal('rand()'), limit: 6 })
         const productsList = products.map(p => p.get({plain:true}))
         res.render('homepage', {
             items: productsList,
@@ -21,21 +21,10 @@ router.get('/', async (req, res) =>
 router.get('/product/:id', async (req, res) =>
 {
     try {
-        const productData = await Product.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-            ],
-        });
-
+        const productData = await Product.findByPk(req.params.id)
         const product= productData.get({ plain: true });
 
-        res.render('product', {
-            ...product,
-            logged_in: req.session.logged_in
-        });
+        res.render('product', { product });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -106,16 +95,6 @@ router.get('/checkout', (req, res) =>
     }
 
     res.render('checkout');
-});
-
-router.get('/product', (req, res) =>
-{
-    if (req.session.logged_in) {
-        res.redirect('/product');
-        return;
-    }
-
-    res.render('product');
 });
 
 

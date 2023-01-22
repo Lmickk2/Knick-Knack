@@ -1,13 +1,14 @@
-      <div class="product-card">
-            {{#each items as |item|}}
-            <div class="product-card-thumbnail">
-              <a href="#"><img src="/images/product.png"/></a>
-            </div>
-            <h2 class="product-card-title"><a href="#">{{item.product_name}}</h2>
-            <span class="product-card-desc">{{item.description}}</span>
-            <span class="product-card-price">${{item.price}}</span>
-            <form action="/create-checkout-session" method="POST">
-            <button type="submit" id="checkout-button">Checkout</button>
-            </form>
-          </div>
-        {{/each}}
+<div class="dropdown">
+<label for="category-select">Select a category:</label>
+<select id="category-select">
+  <option value="all">All</option>
+  {{#each categories as |category|}}
+  <option value="category1">{{category.category_name}}</option>
+  <option value="category2">{{category.category_name}}</option>
+  <option value="category3">{{category.category_name}}</option>
+  {{/each}}
+</select>
+</div>
+
+{{> shopItems}}
+

@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Buy cool new product</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-  </head>
-  <body>
-    <section>
-      <div class="product">
-        <img src="/images/{{product.filename}}" alt="{{product.description}}" />
+
+<div class="product">
+        <img src="{{product.filename}}"/>
         <div class="description">
           <h3>{{product.product_name}}</h3>
           <h5>${{product.price}}</h5>
         </div>
       </div>
+    <section>
       <form action="/create-checkout-session" method="POST">
-        <button type="submit" id="checkout-button">Checkout</button>
+        <button type="submit" id="checkout-button" data-id={{product.id}}>Add to Cart</button>
       </form>
     </section>
-
-    <script src="/stripe.js"></script>
-  </body>
-</html>
+    <div class="container-space"></div>
