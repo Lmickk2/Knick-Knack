@@ -1,17 +1,10 @@
-<div class="row column text-center">
-      <h2 class="featured">Featured Today!</h2>
-      <hr>
-    </div>
-
-    <div class="row small-up-2 medium-up-3 large-up-6">
+<div class="row small-up-2 medium-up-3 large-up-6">
       {{#each items as |item|}}
       <div class="column">
         <img class="thumbnail" src="{{item.filename}}">
-        <h5>{{item.product_name}}</h5>
+        <h5><a href="/product/{{item.id}}">{{item.product_name}}</a></h5>
         <p>${{item.price}}</p>
         <a href="/product/{{item.id}}" class="button small expanded hollow">View</a>
       </div>
       {{/each}}
     </div>
-
-    

@@ -20,6 +20,10 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price:{
       type: DataTypes.DECIMAL,
       allowNull: false,
@@ -35,7 +39,7 @@ Product.init(
         type: DataTypes.INTEGER
       }
     },
-    description: {
+    product_description: {
       type: DataTypes.STRING,
       allowNull: true
     },
