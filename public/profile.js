@@ -4,7 +4,6 @@ const newFormHandler = async (event) => {
     const name = document.querySelector('#product-name').value.trim();
     const description = document.querySelector('#product-desc').value.trim();
     const price = document.querySelector('#product-price').value.trim();
-    const image = document.querySelector('#product-image').value.trim();
 
   
     if (name && description && price && image) {
