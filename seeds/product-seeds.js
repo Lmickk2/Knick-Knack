@@ -6,7 +6,7 @@ const productData = [
     price: 19.99,
     stock: 8,
     category_id: 1,
-    user_id: 1
+    user_id: 1,
   },
   {
     product_name: 'Jean Jacket',
