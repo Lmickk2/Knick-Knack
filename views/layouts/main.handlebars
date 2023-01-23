@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knick-Knack</title>
+    <link rel="icon" type="image/png" href="https://ih1.redbubble.net/image.1549911863.8473/st,small,507x507-pad,600x600,f8f8f8.jpg">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/intro.css">
@@ -13,14 +14,13 @@
 
     <div class="top-bar-center">
       <ul class="menu"></ul>
-      <a href="/"><img src="./images/logo.png" class="logo" width="400px" height="250px"></img></a>
+      <a href="/"><img src="/images/logo.png" class="logo" width="400px" height="250px"></img></a>
       <div class="top-bar-left">
         <ul class="menu">
           <li><a href="/shop">Shop</a></li>
           {{#if loggedIn}}
-          <li><a href="/account">My Account</a></li>
-          <li><button id="logout">logout</button></li>
-          <li><a href="checkout"> Cart </a></li>
+          <li><a href="/profile">My Account</a></li>
+          <li><button id="logout">Logout</button></li>
           {{else }}
           <li><a href="/login">Login</a></li>
           {{/if}}
@@ -28,22 +28,20 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button type="button" class="button">Search</button></li>
+      <li class="cart"><a href="checkout">Cart</a></li>
         </ul>
       </div>
     </div>
-
     <hr>
 
-  <main class="container container-fluid mt-5">
+  <main class="container">
       {{#if loggedIn}}
   <script src="./logout.js"></script>
   {{/if}}
       {{{ body }}}
     </main>
 
-
+    
      <footer class="social-footer">
       <div class="social-footer-left">
         <li class="footerLogo">Knick Knack</li>
@@ -61,7 +59,7 @@
     
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="./scripts.js"></script>
+    <script src="/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
   </body>

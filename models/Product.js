@@ -22,6 +22,7 @@ Product.init(
     },
     filename: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     price:{
       type: DataTypes.DECIMAL,
@@ -38,7 +39,7 @@ Product.init(
         type: DataTypes.INTEGER
       }
     },
-    description: {
+    product_description: {
       type: DataTypes.STRING,
       allowNull: true
     },
