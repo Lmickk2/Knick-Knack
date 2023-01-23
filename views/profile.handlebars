@@ -1,17 +1,30 @@
-
-<div class="row column text-center">
-      <h2 class="featured">Your Account</h2>
-      <hr>
-    </div>
-
-
-<h1>Welcome, {{user.name}} <span id="name"></span>!</h1>
-  <p>{{user.id}} <span id="profile-id"></span></p>
-  <form>
-    <label for="profile-image">Upload Profile Image:</label>
-    <input type="file" id="profile-image" name="profile-image">
-    <br>
-    <button type="submit">Upload</button>
-  </form>
-  {{/each}}
+<div class="row">
+  <div class="col-auto">
+    <h2 class="welcome">Welcome, {{name}}!</h2>
   </div>
+</div>
+
+  {{#if products.length}}
+  <div class="product-list">
+    <h3 class="my-listings">My Listings:</h3>
+
+    {{#each products as |product|}}
+    <div class="all-listings">
+    <div class="my-listings">
+      <div class="col-md-8">
+        <h4 class="listed-product"><a href="/product/{{product.id}}">{{product.product_name}}</a></h4>
+      </div>
+      <img src="{{product.filename}}" class="listed-photo"/>
+      <div class="col-md-4">
+        <button class="delete-btn" data-id="{{product.id}}">Delete Listing</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+</div>
+
+<script src="/profile.js"></script>
+
+<div class="container-space"></div>

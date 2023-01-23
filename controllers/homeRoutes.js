@@ -30,26 +30,23 @@ router.get('/product/:id', async (req, res) =>
     }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) =>
-{
+router.get('/profile', withAuth, async (req, res) => {
     try {
-        // Find the logged in user based on the session ID
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: User }],
-        });
-
-        const user = userData.get({ plain: true });
-
-        res.render('profile', {
-            ...user,
-            logged_in: true
-        });
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Product }],
+      });
+  
+      const user = userData.get({ plain: true });
+  
+      res.render('profile', {
+        ...user,
+        logged_in: true
+      });
     } catch (err) {
-        res.status(500).json(err);
+      res.status(500).json(err);
     }
-});
+  });
 
 router.get('/login', (req, res) =>
 {
@@ -96,6 +93,24 @@ router.get('/checkout', (req, res) =>
 
     res.render('checkout');
 });
+
+router.get('/sell', withAuth, async (req, res) => {
+    try {
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Product }],
+      });
+  
+      const user = userData.get({ plain: true });
+  
+      res.render('sell', {
+        ...user,
+        logged_in: true
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 
