@@ -27,14 +27,12 @@ a {
 .menu-text {
   text-shadow: black -1px 1px 1px;
   font-size: 32px;
-  font-family: "Fira Sans Condensed", sans-serif;
   background-color: rgb(255, 255, 255) !important;
   color: rgb(0, 0, 0);
 }
 
 .menu {
   font-size: 22px;
-  font-family: "Fira Sans Condensed", sans-serif;
   background-color: rgb(255, 255, 255) !important;
   color: rgb(0, 0, 0);
 }
@@ -50,11 +48,9 @@ a {
   border: black 1px solid;
   border-radius: 15px;
   color: #0c3e5f;
-  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .featured {
-  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 36px;
 }
 
@@ -71,7 +67,7 @@ a {
   padding-bottom: 5px;
   text-align: center;
   color: #0c3e5f;
-  font-family: "Rowdies", cursive;
+  font-family: "Rowdies", cursive !important;
 }
 
 .simple {
@@ -112,21 +108,21 @@ a {
 
 .footerLogo {
   color: white;
-  font-family: "Rowdies", cursive;
+  font-family: "Rowdies", cursive !important;
   list-style: none;
 }
 
 .btn {
-  font-family: "Fira Sans Condensed", sans-serif;
   position: absolute;
-  top: 80%; 
-  left: 50%; 
+  top: 90%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
+  color: white;
   font-size: 28px;
-  text-shadow: rgb(0, 0, 0) -1px 1px 2wpx;
+  background-color: #00000012;
+  box-shadow: 0px 0px 10px 5px rgb(0 0 0 / 34%);
   text-align: center;
-  z-index:1;
+  z-index: 1;
   padding: 10px;
 }
 
@@ -134,7 +130,8 @@ a {
   color: white;
   background-color: black;
   margin: auto;
-  width: 50%;
+  width: 40%;
+  height: 500px;
   border: 3px solid #ffffff;
   border-radius: 20px;
   padding: 10px;
@@ -144,15 +141,11 @@ a {
   color: white;
   text-shadow: black -1px 1px 1px;
   margin-bottom: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .sign-in-form label {
-  text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 1px;
-  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -167,10 +160,10 @@ a {
 
 .sign-in-form-username,
 .sign-in-form-password {
+  font-family: "Fira Sans Condensed", sans-serif !important;
   background-color: white;
   border-radius: 30px;
   border: none;
-  opacity: 0.1;
   transition: all ease 0.4s;
 }
 
@@ -179,9 +172,10 @@ a {
   border: 1px solid #fff;
   color: #fff;
   background-color: transparent;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  width: 100%;
+  width: 50%;
+  margin: auto;
+  display: block;
   padding: 1rem;
   transition: all ease 0.4s;
 }
@@ -287,7 +281,7 @@ a {
 }
 
 .product-card-title {
-  font-family: "Open sans", sans-serif;
+  font-family: "Open sans", sans-serif !important;
   font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.45rem;
@@ -298,7 +292,7 @@ a {
 .product-card-desc {
   color: #8a8a8a;
   display: block;
-  font-family: "Open sans", sans-serif;
+  font-family: "Open sans", sans-serif !important;
   font-size: 0.85rem;
 }
 
@@ -325,7 +319,7 @@ a {
 
 hr {
   border: 0;
-  border-top: 1px solid #000000;
+  border-top: 1px solid transparent;
 }
 
 .product-card-color-option {
@@ -413,18 +407,7 @@ hr {
 
 .tech-slideshow > div {
   height: 550px;
-  width: 4000px;
-  background: url("./images/Untitled_Artwork\ 89.png");
-  height: 100%;
-}
-.tech-slideshow .mover-1 {
-  animation: moveSlideshow 12s linear infinite;
-}
-
-@keyframes moveSlideshow {
-  100% { 
-    transform: translateX(-66.6666%);  
-  }
+  background: url("./images/sliderIMG.png");
 }
 
 .img-slider {
@@ -434,25 +417,27 @@ hr {
 .slide-title {
   padding: 8px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.336);
+  font-family: Variera Demo !important;
+  font-size: 66px;
   position: absolute;
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%);
   color: white;
-  text-shadow: black -1px 1px 1px;
-  font-size: 50px;
+  text-shadow: rgba(0, 0, 0, 0.329) 0px 0px 8px;
   text-align: center;
   z-index:1;
 }
 
 .view-more {
+  margin-top: 15px;
   color: white;
   background-color: black;
   padding: 4px;
   text-align: center;
   width: 15%;
   margin: auto;
+  margin-top: 20px;
 }
 
 
@@ -494,6 +479,7 @@ padding-left: 25%;
 
 label {
   font-size: 20px !important;
+  color: white;
 }
 
 .product-list {
@@ -556,10 +542,114 @@ label {
 }
 
 .page-title {
-  font-family: "Fira Sans Condensed", sans-serif;
   text-align: center;
 }
 
 .reveal {
   color: white;
+}
+
+.signup-form {
+  color: white;
+  background-color: black;
+  margin: auto;
+  width: 50%;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.signup-form input {
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+}
+
+.signup-form input:focus {
+  opacity: 0.9;
+}
+
+.signup-form-username,
+.signup-form-password {
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+  opacity: 0.1;
+  transition: all ease 0.4s;
+}
+
+.signup-form-button {
+  border-radius: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 1rem;
+  transition: all ease 0.4s;
+}
+
+.signup-form-button:hover {
+  background-color: #44c8ed;
+  border-color: #44c8ed;
+}
+
+.sign-up {
+  text-align: center;
+}
+
+.or {
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.sign-option {
+  margin: auto !important;
+  display: block;
+  text-align: center !important;
+  font-size: 22px;
+  border-bottom: 2px solid black;
+}
+
+.signup-form {
+  color: white;
+  background-color: black;
+  margin: auto;
+  width: 40%;
+  height: 500px;
+  border: 3px solid #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.sign-up-form-button {
+  border-radius: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  letter-spacing: 1px;
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 1rem;
+  transition: all ease 0.4s;
+}
+
+.sign-up-form-button:hover {
+  background-color: #44c8ed;
+  border-color: #44c8ed;
+}
+
+.btn-sign {
+  position: absolute;
+  top: 70%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  background-color: #000000;
+  text-align: center;
+  z-index:1;
+  padding: 10px;
 }

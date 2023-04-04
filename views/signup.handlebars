@@ -1,21 +1,28 @@
+ <div class="col-md-6">
 
+<form class="signup-form" action="/api/user/signup" method="POST">
+ <h4 class="text-center">Signup</h4>
+  <div class="form-group">
+    <label for="name-signup">Name:</label>
+    <input class="form-input" type="text" id="name-signup" name="name" />
+  </div>
+  <div class="form-group">
+    <label for="email-signup">Email:</label>
+    <input class="form-input" type="text" id="email-signup" name="email" />
+  </div>
+  <div class="form-group">
+    <label for="password-signup">Password:</label>
+    <input class="form-input" type="password" id="password-signup" name="password" />
+  </div>
+  <div class="form-group">
+    <button type="submit" class="sign-up-form-button">Sign Up!</button>
+  </div>
+</form>
 
-    <h2 class="page-title">Signup</h2>
-        <div class="login">
-        <form id="sign-in-form">
-            <div class="sign-in-form">
-              <label for="sign-in-form-name">Name</label>
-              <input type="text" class="sign-in-form-name" id="sign-in-form-name">
-              <label for="sign-in-form-user">Email:</label>
-              <input type="text" class="sign-in-form-user" id="sign-in-form-user">
-              <label for="sign-in-form-password">Password</label>
-              <input type="password" id="myInput" class="sign-in-form-pass">
-              <input type="checkbox" onclick="showPass()">Show Password
-              <button type="submit" class="sign-in-form-button">Sign Up!</button>
-            </div>
-          </form>
-        </div>
+  </div>
+  <p class="or">Or</p>
+        <a href="/login"><button class="sign-option">Login</button></a>
+</div>
+    <script src="/login.js"></script>
 
-
-
-<script src="/signup.js"></script>
+ 

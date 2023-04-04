@@ -62,4 +62,33 @@ router.post('/logout', (req, res) => {
     }
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    const userExists = await User.findOne({ where: { email: req.body.email } });
+    if (userExists) {
+      res.status(409).json({ message: 'User already exists' });
+      return;
+    }
+
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.loggedIn = true;
+      res.redirect('/login');
+    });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+
 module.exports = router;
