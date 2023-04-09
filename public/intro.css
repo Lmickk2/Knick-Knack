@@ -414,6 +414,13 @@ hr {
   position: relative;
 }
 
+@media screen and (max-width:1023px) {
+  .slide-title {
+    font-size: 38px !important;
+    width: 80% !important;
+  }
+}
+
 .slide-title {
   padding: 8px;
   border-radius: 5px;
